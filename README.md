@@ -110,3 +110,6 @@ Firewall Controller
 Installl Fast API:
 pip install fastapi uvicorn
 
+RUN:
+uvicorn backend.app:app --reload
+npm run dev

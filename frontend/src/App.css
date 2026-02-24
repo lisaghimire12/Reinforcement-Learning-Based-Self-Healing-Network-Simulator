@@ -1,0 +1,83 @@
+body {
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px cyan; }
+  to { text-shadow: 0 0 25px magenta; }
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.card {
+  width: 200px;
+  height: 150px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+.blue { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+.green { background: linear-gradient(135deg, #00ff87, #009e60); }
+.red { background: linear-gradient(135deg, #ff416c, #ff0000); }
+.purple { background: linear-gradient(135deg, #a18cd1, #6f42c1); }
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 2.5rem;
+}
+
+.attack-btn {
+  background: linear-gradient(135deg, red, darkred);
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px red;
+  transition: transform 0.3s;
+  align-self: center;
+}
+
+.attack-btn:hover {
+  transform: scale(1.1);
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

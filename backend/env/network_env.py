@@ -6,15 +6,14 @@ class NetworkEnv:
         self.attack_sim = AttackSimulator()
         self.firewall = FirewallController()
         self.threshold = 30
+        self.current_state = 0
 
-    def get_state(self):
-        traffic = self.attack_sim.generate_traffic()
-        return traffic
+    def reset(self):
+        self.current_state = self.attack_sim.generate_traffic()
+        return self.current_state
 
     def step(self, action):
-        state = self.get_state()
-
-        attack = state > self.threshold
+        attack = self.current_state > self.threshold
 
         if action == 1:
             self.firewall.block()
@@ -28,4 +27,7 @@ class NetworkEnv:
         else:
             reward = -5
 
-        return state, reward
+        next_state = self.attack_sim.generate_traffic()
+        self.current_state = next_state
+
+        return next_state, reward

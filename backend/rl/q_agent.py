@@ -3,9 +3,9 @@ import random
 class QLearningAgent:
     def __init__(self):
         self.q = {}
-        self.alpha = 0.1
+        self.alpha = 0.2
         self.gamma = 0.9
-        self.epsilon = 0.1
+        self.epsilon = 0.5
 
     def get_q(self, s, a):
         return self.q.get((s,a), 0)
